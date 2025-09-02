@@ -62,7 +62,7 @@ input_df = pd.DataFrame(input_data)
 geo_encoder_st = onehot_encoder_geo.transform([[geography]]) 
 geo_encoded_st_df = pd.DataFrame(geo_encoder_st.toarray(), columns=onehot_encoder_geo.get_feature_names_out(['Geography']))
 input_df = pd.concat([input_df, geo_encoded_st_df], axis=1)
-input_df = input_df.drop(['Geography'], axis=1)
+# input_df = input_df.drop(['Geography'], axis=1)
 
 # Prediction
 model_input_st = scaler.transform(input_df)
@@ -70,4 +70,5 @@ prediction_st = model.predict(model_input_st)
 print(prediction_st)
 print("Prediction Probability:", prediction_st[0][0])
 print("Prediction:", "Exited" if prediction_st[0][0] > 0.5 else "Not Exited")
+
 
