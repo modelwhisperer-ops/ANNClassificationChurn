@@ -68,8 +68,9 @@ input_df = pd.concat([input_df, geo_encoded_st_df], axis=1)
 model_input_st = scaler.transform(input_df)
 prediction_st = model.predict(model_input_st)
 print(prediction_st)
-print("Prediction Probability:", prediction_st[0][0])
+print("Prediction Probability:", st.write(prediction_st[0][0]))
 print("Prediction:", st.write("Exited") if prediction_st[0][0] > 0.5 else st.write("Not Exited"))
+
 
 
 
