@@ -69,6 +69,7 @@ model_input_st = scaler.transform(input_df)
 prediction_st = model.predict(model_input_st)
 print(prediction_st)
 print("Prediction Probability:", prediction_st[0][0])
-print("Prediction:", "Exited" if prediction_st[0][0] > 0.5 else "Not Exited")
+print("Prediction:", st.write("Exited") if prediction_st[0][0] > 0.5 else st.write("Not Exited"))
+
 
 
